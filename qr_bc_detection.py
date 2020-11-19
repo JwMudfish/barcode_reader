@@ -19,17 +19,22 @@ def nothing(x):
     pass
 
 
-cap = cv2.VideoCapture(2)
+cap = cv2.VideoCapture(6)
 
 
 MJPG_CODEC = 1196444237.0 # MJPG
 
 
-cap.set(cv2.CAP_PROP_BRIGHTNESS, 20)
+cap.set(cv2.CAP_PROP_BRIGHTNESS, 10)
 cap.set(cv2.CAP_PROP_FOURCC, MJPG_CODEC)
+# cap.set(cv2.CAP_PROP_FRAME_WIDTH, 3840)
+# cap.set(cv2.CAP_PROP_FRAME_HEIGHT, 2160)
+
 cap.set(cv2.CAP_PROP_FRAME_WIDTH, 1980)
 cap.set(cv2.CAP_PROP_FRAME_HEIGHT, 1060)
-cap.set(cv2.CAP_PROP_AUTOFOCUS, 1)
+
+
+cap.set(cv2.CAP_PROP_AUTOFOCUS, 0)
 cap.set(cv2.CAP_PROP_FOCUS, 0)
 
 #print(get_goods_name('8801056098834'))
@@ -41,8 +46,12 @@ cv2.resizeWindow('img', 1980,1060)
 i = 0
 while(cap.isOpened()):
   ret, img = cap.read()
+  #img = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
+  img = cv2.GaussianBlur(img, (0,0), 1.0)
+
   #cap.set(cv2.CAP_PROP_FOCUS, FOCUS)
-  print(cv2.CAP_PROP_FOCUS)
+  print(cv2.CAP_PROP_FRAME_WIDTH)
+
 
   if not ret:
     continue

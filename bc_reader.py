@@ -5,6 +5,8 @@ from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker, aliased
 from keys import keys
 import models
+from PIL import Image
+
 engine = create_engine(f'postgresql://postgres:{keys.get("postgres", "./keys")}@database-1.ctnphj2dxhnf.ap-northeast-2.rds.amazonaws.com/emart24')
 Session = sessionmaker(bind=engine)
 session = Session()
@@ -14,17 +16,24 @@ def get_design_infer_labels(goods_id):
     return result
 
 img_name = '88021485'
+#img_name = 'main2'
 
-#img = cv2.imread(f'./images/{img_name}.jpg', cv2.IMREAD_GRAYSCALE)
+img = cv2.imread(f'./images/{img_name}.jpg', cv2.IMREAD_GRAYSCALE)
+
+# img = cv2.imread(f'./images/{img_name}.jpg')
+# img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
+
+img = cv2.GaussianBlur(img, (0,0), 1.0)
+
 #img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
 
 #gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
 
-# import matplotlib.pyplot as plt
-# plt.imshow(img)
+import matplotlib.pyplot as plt
+plt.imshow(img)
 
-#decoded = pyzbar.decode(img)
 decoded = pyzbar.decode(img)
+#decoded = pyzbar.decode(Image.open(f'./images/{img_name}.jpg'))
 '''
   for d in decoded: 
     x, y, w, h = d.rect
