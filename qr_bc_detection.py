@@ -73,7 +73,7 @@ while(cap.isOpened()):
     try:
       #text = get_design_infer_labels(text)[0][0]
     #goods_name = get_goods_name(str(barcode_data))
-      #print(text)
+    
     #print(barcode_data)
     #print(barcode_type)
       #cv2.putText(img, text, (x, y), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 255, 255), 2, cv2.LINE_AA)
