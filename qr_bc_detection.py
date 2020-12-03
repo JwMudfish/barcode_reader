@@ -74,7 +74,7 @@ while(cap.isOpened()):
       #text = get_design_infer_labels(text)[0][0]
     #goods_name = get_goods_name(str(barcode_data))
     
-    #print(barcode_data)
+    ##print(barcode_data)
     #print(barcode_type)
       #cv2.putText(img, text, (x, y), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 255, 255), 2, cv2.LINE_AA)
       cv2.putText(img, barcode_data, (x, y), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 255, 255), 2, cv2.LINE_AA)
@@ -92,7 +92,7 @@ while(cap.isOpened()):
   #elif key == ord('c'):
     #cv2.imwrite(f'./images/{}.jpg', img)
 
-    
+  
   elif key == ord('+'):
     FOCUS = FOCUS + 2
     print(FOCUS)
