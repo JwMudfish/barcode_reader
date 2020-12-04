@@ -19,7 +19,7 @@ def nothing(x):
     pass
 
 
-cap = cv2.VideoCapture(6)
+cap = cv2.VideoCapture(-1)
 
 
 MJPG_CODEC = 1196444237.0 # MJPG
@@ -41,7 +41,7 @@ cap.set(cv2.CAP_PROP_FOCUS, 0)
 cv2.namedWindow('img', cv2.WINDOW_NORMAL)
 cv2.resizeWindow('img', 1980,1060)
 
-#FOCUS = 100
+#FOCUS = 100q
 
 i = 0
 while(cap.isOpened()):
@@ -50,7 +50,7 @@ while(cap.isOpened()):
   img = cv2.GaussianBlur(img, (0,0), 1.0)
 
   #cap.set(cv2.CAP_PROP_FOCUS, FOCUS)
-  print(cv2.CAP_PROP_FRAME_WIDTH)
+  print(cv2.CAP_PROP_FOCUS)
 
 
   if not ret:
@@ -71,7 +71,7 @@ while(cap.isOpened()):
     #text = '%s (%s)' % (barcode_data, barcode_type)
     text = '%s' % (barcode_data)
     try:
-      #text = get_design_infer_labels(text)[0][0]
+      ##text = get_design_infer_labels(text)[0][0]
     #goods_name = get_goods_name(str(barcode_data))
     
     ##print(barcode_data)
