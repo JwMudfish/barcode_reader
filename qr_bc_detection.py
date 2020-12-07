@@ -56,7 +56,7 @@ while(cap.isOpened()):
   if not ret:
     continue
 
-  #gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
+  ##gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
      
   decoded = pyzbar.decode(img)
 
