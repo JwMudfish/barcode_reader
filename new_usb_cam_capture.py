@@ -29,7 +29,7 @@ MJPG_CODEC = 1196444237.0 # MJPG
 cap_AUTOFOCUS = 0
 
 cap_FOCUS = 0
-#cap_ZOOM = 400
+#cap_ZOOM = 40
 
 
 cv2.namedWindow('Usb Cam', cv2.WINDOW_FREERATIO)
