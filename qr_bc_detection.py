@@ -19,7 +19,7 @@ def nothing(x):
     pass
 
 
-cap = cv2.VideoCapture(-1)
+cap = cv2.VideoCapture(4)
 
 
 MJPG_CODEC = 1196444237.0 # MJPG
@@ -47,7 +47,7 @@ i = 0
 while(cap.isOpened()):
   ret, img = cap.read()
   #img = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
-  img = cv2.GaussianBlur(img, (0,0), 1.0)
+  #img = cv2.GaussianBlur(img, (0,0), 1.0)
 
   #cap.set(cv2.CAP_PROP_FOCUS, FOCUS)
   print(cv2.CAP_PROP_FOCUS)
@@ -82,6 +82,7 @@ while(cap.isOpened()):
       print('------------------------------')
 
   #FOCUS = cv2.getTrackbarPos('Focus', 'img') - 100
+
 
   cv2.imshow('img', img)
 
