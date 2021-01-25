@@ -5,7 +5,7 @@ import imutils
 from datetime import datetime
 import time
 
-cap = cv2.VideoCapture(2)  
+cap = cv2.VideoCapture(-1)  
 if cap.isOpened() == False:
     print('카메라를 오픈 할 수 없습니다.')
 
